@@ -61,6 +61,7 @@ public class StateMachine<T>
     public void OnUpdate()
     {
         _currentState.OnUpdate();
+        Debug.Log(_currentState.ToString());
     }
 
     public void OnFixedUpdate()

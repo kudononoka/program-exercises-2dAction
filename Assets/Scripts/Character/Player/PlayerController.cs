@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
         _groundJudge = GetComponent<GroundJudge>();
         _jumpState.Rigidbody2D = _rb;
         _jumpState.GroundJudge = _groundJudge;
+        _jumpState.Transform = transform;
         _moveState.Rigidbody2D = _rb;
         _playerStateMachine.StateAdd(_playerStateMachine,(int)StateType.Move, _moveState);
         _playerStateMachine.StateAdd(_playerStateMachine,(int)StateType.Jump, _jumpState);
