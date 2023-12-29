@@ -1,9 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour,IDamage
 {
     [SerializeField] 
     PlayerMove _moveState = new();
@@ -12,6 +13,7 @@ public class PlayerController : MonoBehaviour
     PlayerJump _jumpState = new();
 
     GroundJudge _groundJudge;
+    PlayerParameter _parameter;
     public enum StateType
     {
         Move,
@@ -43,5 +45,10 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         _playerStateMachine.OnFixedUpdate();
+    }
+
+    public void Damage(int damage)
+    {
+        _parameter.ChangeHp(_parameter.CurrentHp - damage);
     }
 }
