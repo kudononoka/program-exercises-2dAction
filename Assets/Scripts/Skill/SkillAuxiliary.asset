@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: SkillAuxiliary
+  m_EditorClassIdentifier: Assembly-CSharp::SkillManager
+  sheetUrl: https://script.google.com/macros/s/AKfycby5WKD-mqi95gTR_s8s-awqaeTnJZWbMZ7ho7FE1CYfG8EH0Wlr_NesO3IYSywBpzuD/exec
+  _skillData:
+    Data:
+    - Id: 1
+      SkillName: "HP\u6700\u5927\u5024UP"
+      Effect: "HP\u306E\u6700\u5927\u5024\u304C5%\u4E0A\u6607\u3059\u308B"
+      CostMin: 3
+      CostMax: 5
+    - Id: 2
+      SkillName: "HP\u6700\u5927\u5024UP"
+      Effect: "HP\u306E\u6700\u5927\u5024\u304C10%\u4E0A\u6607\u3059\u308B"
+      CostMin: 4
+      CostMax: 6
+    - Id: 3
+      SkillName: "HP\u6700\u5927\u5024UP"
+      Effect: "HP\u306E\u6700\u5927\u5024\u304C15%\u4E0A\u6607\u3059\u308B"
+      CostMin: 5
+      CostMax: 8
+    - Id: 4
+      SkillName: "\u30A2\u30A4\u30C6\u30E0\u81EA\u52D5\u5438\u7740"
+      Effect: "\u63A1\u53D6\u30DD\u30A4\u30F3\u30C8\u306E\u30A2\u30A4\u30C6\u30E0\u3092\u81EA\u52D5\u3067\u62FE\u3048\u308B\u3088\u3046\u306B\u306A\u308B"
+      CostMin: 13
+      CostMax: 13
+    - Id: 5
+      SkillName: "\u53D6\u5F97\u7D4C\u9A13\u5024UP"
+      Effect: "\u6575\u7834\u58CA\u6642\u306E\u53D6\u5F97\u7D4C\u9A13\u5024\u304C2%\u5897\u52A0\u3059\u308B"
+      CostMin: 13
+      CostMax: 16
+    - Id: 6
+      SkillName: "\u53D6\u5F97\u7D4C\u9A13\u5024UP"
+      Effect: "\u6575\u7834\u58CA\u6642\u306E\u53D6\u5F97\u7D4C\u9A13\u5024\u304C5%\u5897\u52A0\u3059\u308B"
+      CostMin: 14
+      CostMax: 17
+    - Id: 7
+      SkillName: "\u53D6\u5F97\u7D4C\u9A13\u5024UP"
+      Effect: "\u6575\u7834\u58CA\u6642\u306E\u53D6\u5F97\u7D4C\u9A13\u5024\u304C8%\u5897\u52A0\u3059\u308B"
+      CostMin: 15
+      CostMax: 18
+    - Id: 8
+      SkillName: "\u30AA\u30FC\u30C8\u30A2\u30A4\u30C6\u30E0"
+      Effect: "HP\u304C30%\u4EE5\u4E0B\u306B\u306A\u308B\u3068\u81EA\u52D5\u3067\u56DE\u5FA9\u52B9\u679C1.1\u500D\u3067\u56DE\u5FA9\u30A2\u30A4\u30C6\u30E0\u3092\u4F7F\u7528\u3059\u308B"
+      CostMin: 14
+      CostMax: 16
+    - Id: 9
+      SkillName: "\u30AA\u30FC\u30C8\u30A2\u30A4\u30C6\u30E0"
+      Effect: "HP\u304C30%\u4EE5\u4E0B\u306B\u306A\u308B\u3068\u81EA\u52D5\u3067\u56DE\u5FA9\u52B9\u679C1.5\u500D\u3067\u56DE\u5FA9\u30A2\u30A4\u30C6\u30E0\u3092\u4F7F\u7528\u3059\u308B"
+      CostMin: 15
+      CostMax: 18

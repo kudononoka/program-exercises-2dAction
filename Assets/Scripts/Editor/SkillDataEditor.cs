@@ -1,11 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using Cysharp.Threading.Tasks;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
-using UnityEngine.Networking;
-using UnityEngine.Profiling;
 
+/// <summary>ボタンを押したらシートの読み込みをするようにした</summary>
 [CustomEditor(typeof(SkillManager))]
 public class SkillDataEditor : Editor
 {
@@ -17,7 +13,12 @@ public class SkillDataEditor : Editor
         {
             if(_target == null) _target = target as SkillManager;
 
-             await _target.LoadGSS(_target.SheetUrl);
+             await _target.LoadSpreadSheetData(_target.SheetUrl);
+        }
+
+        if(_target != null && _target.IsLoading)
+        {
+            GUILayout.Label("読み込み中");
         }
     }
 }

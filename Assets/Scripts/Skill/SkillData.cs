@@ -1,25 +1,37 @@
-using Cysharp.Threading.Tasks;
-using JetBrains.Annotations;
-using System.Collections;
-using System.Collections.Generic;
+﻿using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
-using UnityEngine.Profiling;
 
+/// <summary>スキルデータをスプレッドシートから読み込んで管理するクラス</summary>
 [CreateAssetMenu(fileName = "SkillManager", menuName = "ScriptableObjects/SkillManager", order = 1)]
 public class SkillManager : ScriptableObject
 {
-    [SerializeField] string sheetUrl = "";
-    [SerializeField] SkillData _skillData = new();
+    [SerializeField]
+    [Header("スプレッドシートのURL")]
+    string sheetUrl = "";
+
+    [SerializeField]
+    [Header("スキルデータ")]
+    SkillData _skillData = new();
+
+    [Tooltip("ローディング中かどうか")]
+    bool _isLoading = false;
 
     public string SheetUrl => sheetUrl;
 
-    public async UniTask LoadGSS(string sheetUrl)
+    public bool IsLoading => _isLoading;
+
+    /// <summary>スプレッドシートから取得して配列に格納する処理を行う</summary>
+    /// <param name="sheetUrl">URL</param>
+    /// <returns></returns>
+    public async UniTask LoadSpreadSheetData(string sheetUrl)
     {
+        _isLoading = true;
         var request = UnityWebRequest.Get(sheetUrl);
 
         await request.SendWebRequest();
 
+        _isLoading = false;
         if (request.error != null)
         {
             Debug.Log(request.error);
@@ -29,7 +41,7 @@ public class SkillManager : ScriptableObject
             _skillData = JsonUtility.FromJson<SkillData>(request.downloadHandler.text);
             foreach (var skill in _skillData.Data)
             {
-                Debug.Log("Id�F" + skill.Id + "�AName�F" + skill.SkillName + "Effect : " + skill.Effect + "CostMin : " + skill.CostMin + "CostMax : " + skill.CostMax);
+                Debug.Log("Id：" + skill.Id + "、Name：" + skill.SkillName + "Effect : " + skill.Effect + "CostMin : " + skill.CostMin + "CostMax : " + skill.CostMax);
             }
         }
     }
